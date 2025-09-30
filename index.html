@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/static/style.css">
+  <div class="hero modern-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1><span class="gradient-text">📄 AI Resume Analyzer</span></h1>
+      <p>Upload your resume and get instant, AI-powered feedback to boost your job search.</p>
+    </div>
+  </div>
+
+  <main class="container modern-container">
+    <form id="uploadForm" class="modern-form" autocomplete="off">
+      <div class="form-group">
+        <input type="file" name="resume" id="resume" accept=".pdf,.docx" required />
+        <label for="resume" class="floating-label margin"><span>Upload Resume (.pdf / .docx)</span></label>
+      </div>
+      <div class="form-group">
+        <textarea id="jobDesc" placeholder="Job Description (Optional) " rows="5"></textarea>
+      </div>
+      <button type="submit" class="cta-btn">
+        <div class="and">
+          <span class="btn-icon">🔍</span> Analyze Resume
+        </div>
+      </button>
+      <div id="spinner" class="spinner" style="display:none;" aria-live="polite" aria-busy="true">
+        <div class="loader"></div>
+        <span>Analyzing...</span>
+      </div>
+    </form>
+
+    <section id="results" class="card modern-card" style="display: none;" tabindex="-1">
+      <h2>📊 Summary</h2>
+      <p id="summary"></p>
+
+      <h2>🏆 Score</h2>
+      <p id="score"></p>
+      <p id="match_score"></p>
+
+      <h2>🔍 Feedback</h2>
+      <ul id="feedback"></ul>
+
+      <button id="downloadBtn" class="cta-btn download-btn">
+        <span class="btn-icon">⬇️</span> Download AI Report (PDF)
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with <span class="footer-heart">❤️</span> for Hackathons</p>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
